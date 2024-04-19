@@ -22,3 +22,16 @@ for i in range(len(csigak)):
     if "meztelen" in csigak[i]["magyar"] and 'fél' not in csigak[i]["magyar"]:
         db+=1
 print(f"{db} db meztelencsiga talalhato az adatok kozt")
+
+be_csiga=input("Kérem a csiga latin nevét")
+def kereses(csigak, s):
+    i = 0
+    while i<len(csigak) and not csigak[i]["latin"] == s.lower():
+        i+=1
+        if i < len(csigak):
+            return csigak[i]["magyar"]
+        else:
+            return "Nincs ilyen a listaban"  
+
+
+print(f"a csiga neve: \n {kereses(csigak, be_csiga)}")
